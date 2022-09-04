@@ -1,0 +1,53 @@
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  border: 10px solid;
+}
+
+.navbar {
+  //border: 10px solid red;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+  transition: 300ms all ease-in-out;
+}
+
+.logo-icon {
+  font-size: 40px;
+}
+
+.logo:hover {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.search-box {
+  color: black;
+  display: flex;
+  flex-flow: row wrap;
+  width: 45%;
+  background: white;
+  overflow: hidden;
+  padding: 5px 0;
+  border-radius: 20px;
+}
+
+.search-box > input {
+  flex: 1 0 auto;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+
+.search-box > button {
+  flex: 0.05 0 auto;
+  font-size: 40px;
+  border: none;
+  outline: none;
+  background: white;
+}
+
+.search-icon {
+  color: black;
+}

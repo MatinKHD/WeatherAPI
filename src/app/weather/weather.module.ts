@@ -7,19 +7,33 @@ import {MatButtonModule} from "@angular/material/button";
 import {WeatherComponent} from "./weather.component";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {NavbarComponent} from './navbar/navbar.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MainComponent} from './main/main.component';
 
 
 @NgModule({
   declarations: [
     WeatherComponent,
-    NavbarComponent
+    NavbarComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
     WeatherRoutingModule,
     MatSliderModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ]
 })
 export class WeatherModule {
