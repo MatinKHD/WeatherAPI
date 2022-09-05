@@ -22,32 +22,43 @@ nav {
   color: rgba(255, 255, 255, 0.76);
 }
 
-.search-box {
-  color: black;
+.mat-toolbar {
+  height: 12vh;
+  padding-top: 2px;
   display: flex;
   flex-flow: row wrap;
-  width: 45%;
-  background: white;
+}
+
+.mat-toolbar > :nth-child(1) {
+  flex: 1 0 0;
+}
+
+.mat-toolbar > :nth-child(2) {
+  flex: 12 0 auto;
+
+}
+
+.mat-toolbar > :nth-child(3) {
+  flex: 1 0 0;
+}
+
+.mat-form-field {
   overflow: hidden;
-  padding: 5px 0;
-  border-radius: 20px;
+  font-size: 15px;
+  border-radius: 20px !important;
+  text-align: center;
+  padding-top: 10px;
 }
 
-.search-box > input {
-  flex: 1 0 auto;
-  border: none;
-  outline: none;
-  margin-left: 10px;
+.example-form {
+  max-width: 22vmax;
+  margin: auto;
 }
 
-.search-box > button {
-  flex: 0.05 0 auto;
-  font-size: 40px;
-  border: none;
-  outline: none;
-  background: white;
+.example-full-width {
+  width: 100%;
 }
 
-.search-icon {
-  color: black;
+:host ::ng-deep {
+
 }

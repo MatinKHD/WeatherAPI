@@ -4,11 +4,29 @@
       <mat-icon class="logo-icon">flood</mat-icon>
     </a>
   </div>
-  <div class="search-box">
-    <input type="text">
-    <button>
-      <mat-icon class="search-icon">search</mat-icon>
-    </button>
+  <!--    <div class="search-box">-->
+  <!--      <input  [formControl]="myControl" placeholder="Enter your city name..." type="text">-->
+  <!--      <button>-->
+  <!--        <mat-icon class="search-icon">search</mat-icon>-->
+  <!--      </button>-->
+  <!--    </div>-->
+  <div>
+    <form class="example-form">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Search</mat-label>
+        <input [formControl]="myControl"
+               [matAutocomplete]="auto"
+
+               matInput
+               placeholder="enter your city"
+               type="text">
+        <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
   </div>
   <div>
     <button mat-raised-button>Dark Mode</button>

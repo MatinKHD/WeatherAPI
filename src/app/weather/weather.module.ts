@@ -14,6 +14,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MainComponent} from './main/main.component';
+import {WeatherService} from "./services/weather.service";
 
 
 @NgModule({
@@ -34,6 +35,9 @@ import {MainComponent} from './main/main.component';
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatInputModule,
+  ],
+  providers: [
+    WeatherService
   ]
 })
 export class WeatherModule {
