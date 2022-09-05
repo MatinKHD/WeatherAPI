@@ -29,6 +29,6 @@ export class ApiService {
 
   // realtime weather -------------------------------
   getRealTimeWeather(cityname: any) {
-    return this.http.get(this.globalVariableService.weather + `?q=${cityname}`)
+    return this.http.get(`https://weatherapi-com.p.rapidapi.com/current.json?q=${cityname}`, this.options);
   }
 }

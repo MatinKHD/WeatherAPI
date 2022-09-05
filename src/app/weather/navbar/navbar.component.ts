@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {map, Observable, startWith} from "rxjs";
 import {ApiService} from "../services/api.service";
+import {SharedService} from "../services/shared.service";
 
 @Component({
   selector: 'app-navbar',
@@ -9,20 +10,20 @@ import {ApiService} from "../services/api.service";
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @Output() cityNameForNavbar = new EventEmitter<string>();
   myControl = new FormControl('');
   options: any[] = [];
   filteredOptions?: Observable<string[]>;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private sharedService: SharedService
   ) {
 
   }
 
   ngOnInit(): void {
-
-
-    console.log(this.filteredOptions);
+    // console.log(this.filteredOptions);
 
   }
 
@@ -47,7 +48,8 @@ export class NavbarComponent implements OnInit {
   }
 
   dastan(name: any) {
-    console.log(name);
+    this.cityNameForNavbar.emit(name);
+    this.sharedService.changeMessage(name);
   }
 
   private _filter(value: string): string[] {

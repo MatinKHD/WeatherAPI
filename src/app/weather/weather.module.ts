@@ -16,6 +16,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MainComponent} from './main/main.component';
 import {WeatherService} from "./services/weather.service";
 import {HttpClientModule} from "@angular/common/http";
+import {SharedService} from "./services/shared.service";
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers: [
-    WeatherService
+    WeatherService,
+    SharedService
   ]
 })
 export class WeatherModule {
