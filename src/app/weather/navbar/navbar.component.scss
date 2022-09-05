@@ -35,7 +35,6 @@ nav {
 
 .mat-toolbar > :nth-child(2) {
   flex: 12 0 auto;
-
 }
 
 .mat-toolbar > :nth-child(3) {
@@ -50,9 +49,9 @@ nav {
   padding-top: 10px;
 }
 
-.example-form {
-  max-width: 22vmax;
-  margin: auto;
+.mat-form-field {
+  max-width: 42vw;
+
 }
 
 .example-full-width {
