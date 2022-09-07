@@ -1,8 +1,60 @@
 <div class="box wallpaper">
-  <img alt="" src="assets/5184599_031119-kgo-shutterstock-rain-img.jpg">
+  <div class="data-container">
+    <div class="condition-icon">
+      <img [src]="cityNameForMain?.current?.condition?.icon" alt="">
+      <!--      <p>test</p>-->
+    </div>
+    <div class="condition-text">
+      <h4>{{cityNameForMain?.current?.condition?.text}}</h4>
+      <!--      <h4>test</h4>-->
+      <h3>Temperature: {{cityNameForMain?.current?.feelslike_c}}</h3>
+      <!--      <h4>test</h4>-->
+    </div>
+  </div>
+  <div class="first-box-background">
+    <img alt="" src="assets/5184599_031119-kgo-shutterstock-rain-img.jpg">
+  </div>
 </div>
-<div class="box forecast today-forecast">
-  <h3>Today Forecast for {{cityNameForMain}}</h3>
+<div class="box forecast d-flex flex-column">
+  <h3>Today Forecast for {{cityNameForMain?.location.name}}</h3>
+  <div class="d-flex flex-row sub-forecast">
+    <div class="sub-forecast-table">
+      <div class="sub-table">
+        <div><p>Max Temp:</p></div>
+        <div><p>test</p></div>
+      </div>
+      <div class="sub-table">
+        <div><p>Avg Temp:</p></div>
+        <div><p>test</p></div>
+      </div>
+      <div class="sub-table">
+        <div><p>Min Temp:</p></div>
+        <div><p>test</p></div>
+      </div>
+      <div class="sub-table">
+        <div><p>Humidty:</p></div>
+        <div><p>test</p></div>
+      </div>
+    </div>
+    <div class="sub-forecast-table">
+      <div class="sub-table">
+        <div><p>Moonrise:</p></div>
+        <div><p>test</p></div>
+      </div>
+      <div class="sub-table">
+        <div><p>Moonset:</p></div>
+        <div><p>test</p></div>
+      </div>
+      <div class="sub-table">
+        <div><p>Sunrise:</p></div>
+        <div><p>test</p></div>
+      </div>
+      <div class="sub-table">
+        <div><p>Sunset:</p></div>
+        <div><p>test</p></div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="box forecast">
   <h3>Hourly Forecast for for {{cityNameForMain}}</h3>
