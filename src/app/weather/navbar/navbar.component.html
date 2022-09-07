@@ -10,22 +10,37 @@
   <!--        <mat-icon class="search-icon">search</mat-icon>-->
   <!--      </button>-->
   <!--    </div>-->
-  <div class="text-center">
+  <div class="d-flex justify-content-center align-items-center">
 
-    <mat-form-field appearance="fill" class="example-full-width">
+    <div
+      style="width: 80%;border: none;background-color: white;height: 48px;border-radius: 12px;padding: 5px;display: flex;justify-content: space-between;align-items: center">
+      <input (keyup)="getValue($event)" [matAutocomplete]="auto" id="input"
+             matInput placeholder="enter your city"
+             style="width: 80%;background-color: white;border: none;outline: none;"
+             type="text">
+      <button (click)="changeCity()" style="width: 20%;">search</button>
+      <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption style="width: 100%;">
+        <mat-option (click)="dastan(option.name)" *ngFor="let option of options"
+                    [value]="option.name">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+
+    <!--<mat-form-field appearance="fill" class="example-full-width">
       <mat-label>Search</mat-label>
-      <input (keydown.enter)="changeCity($event)" [formControl]="myControl"
+      <input (input)="changeCity($event)"
              [matAutocomplete]="auto"
              matInput
              placeholder="enter your city"
              type="text">
       <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
-        <mat-option (onSelectionChange)="dastan(option)" *ngFor="let option of filteredOptions | async"
-                    [value]="option">
-          {{option}}
+        <mat-option (click)="dastan(option.name)" *ngFor="let option of options"
+                    [value]="option.name">
+          {{option.name}}
         </mat-option>
       </mat-autocomplete>
-    </mat-form-field>
+    </mat-form-field>-->
 
   </div>
   <div>

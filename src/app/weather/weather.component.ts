@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ApiService} from "./services/api.service";
 
 @Component({
   selector: 'app-weather',
@@ -7,15 +8,24 @@ import {Component, OnInit} from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
   cityNameForWeather!: any;
+  test: any;
+  loading = false;
 
-  constructor() {
+  constructor(
+    private apiService: ApiService
+  ) {
   }
 
   ngOnInit(): void {
   }
 
   cityName(name: any) {
-    console.log('cityName For Weather', name);
-    this.cityNameForWeather = name;
+    this.loading = true;
+    this.apiService.getRealTimeWeather(name).subscribe((value: any) => {
+      console.log(value);
+      this.test = value;
+    }).add(() => {
+      this.loading = false;
+    });
   }
 }

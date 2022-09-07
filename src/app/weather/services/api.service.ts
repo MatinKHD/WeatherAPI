@@ -6,13 +6,14 @@ import {GlobalVariableService} from "./global-variable.service";
   providedIn: 'root'
 })
 export class ApiService {
-  options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'afa1da8a5fmshc609267f4774855p16c365jsna5da90612395',
-      'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-    }
-  };
+   options = {
+     method: 'GET',
+     headers: {
+       'X-RapidAPI-Key': 'afa1da8a5fmshc609267f4774855p16c365jsna5da90612395',
+       'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+     }
+   };
+
 
   constructor(
     private http: HttpClient,
