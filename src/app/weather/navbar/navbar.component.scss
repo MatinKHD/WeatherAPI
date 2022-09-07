@@ -67,8 +67,28 @@ nav {
   padding: 5px;
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+
+  input {
+    width: 80%;
+    background-color: white;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    font-size: 40px;
+    width: 20%;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  mat-autocomplete {
+    width: 100%;
+  }
 }
+
 
 :host ::ng-deep {
 
