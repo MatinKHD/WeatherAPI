@@ -25,11 +25,11 @@ export class ApiService {
   // weather  --------------------------------------------------------------------------------
   // autocomplete------------------------------------------------
   autocompelete(cityName: any) {
-    return this.http.get(this.globalVariableService.weather + `?q=${cityName}`, this.options);
+    return this.http.get(this.globalVariableService.search + `${cityName}`, this.options);
   }
 
   // realtime weather -------------------------------
   getRealTimeWeather(cityname: any) {
-    return this.http.get(`https://weatherapi-com.p.rapidapi.com/current.json?q=${cityname}`, this.options);
+    return this.http.get(this.globalVariableService.forecast + `${cityname}&days=5`, this.options);
   }
 }

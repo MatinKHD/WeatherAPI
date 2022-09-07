@@ -8,7 +8,8 @@ import {ApiService} from "../services/api.service";
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @Output() cityNameForNavbar = new EventEmitter<string>();
+
+  @Output() cityNameForNavbar = new EventEmitter<string>(); //send cityName to Weather Component
   options: any[] = [];
   filteredOptions?: Observable<string[]>;
   valueInput = '';

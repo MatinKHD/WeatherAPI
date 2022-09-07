@@ -6,5 +6,6 @@ import {Injectable} from "@angular/core";
 export class GlobalVariableService {
 
   // weather --------------------------------------------------------------------------------
-  weather = 'https://weatherapi-com.p.rapidapi.com/search.json?q=';
+  search = 'https://weatherapi-com.p.rapidapi.com/search.json?q=';
+  forecast = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q='
 }
