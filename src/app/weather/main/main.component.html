@@ -2,13 +2,10 @@
   <div class="data-container">
     <div *ngIf="!loading" class="condition-icon">
       <img [src]="cityNameForMain?.current?.condition?.icon" alt="">
-      <!--      <p>test</p>-->
     </div>
     <div *ngIf="!loading" class="condition-text">
       <h4>{{cityNameForMain?.current?.condition?.text}}</h4>
-      <!--      <h4>test</h4>-->
-      <h3>Temperature: {{cityNameForMain?.current?.feelslike_c}}</h3>
-      <!--      <h4>test</h4>-->
+      <h3>Temperature: {{cityNameForMain?.current?.feelslike_c}}°c</h3>
     </div>
   </div>
   <div class="first-box-background">
@@ -17,9 +14,6 @@
 </div>
 <div class="box forecast d-flex flex-column">
   <h3 class="box-header">Today Forecast for {{cityNameForMain?.location.name}}
-    <div *ngIf="loading" class="spinner-loading">
-      <mat-spinner diameter="20"></mat-spinner>
-    </div>
   </h3>
   <div *ngIf="loading" class="spinner-loading m-auto ">
     <mat-spinner diameter="70"></mat-spinner>
@@ -50,7 +44,7 @@
           <p>Min Temp:</p>
         </div>
         <div class="sub-table-body">
-          <p>{{cityNameForMain?.forecast?.forecastday['0']?.day?.mintemp_c}}c</p>
+          <p>{{cityNameForMain?.forecast?.forecastday['0']?.day?.mintemp_c}}°c</p>
         </div>
       </div>
       <div class="sub-table">
@@ -103,20 +97,25 @@
   </div>
 </div>
 <div class="box forecast d-flex flex-column">
-  <h3>Hourly Forecast for for {{cityNameForMain}}</h3>
-  <div *ngIf="!loading" class="spinner-loading m-auto ">
+  <h3>Hourly Forecast for for {{cityNameForMain?.location?.name}}</h3>
+  <div *ngIf="loading" class="spinner-loading m-auto">
     <mat-spinner diameter="70"></mat-spinner>
   </div>
-  <div *ngIf="loading">
-    <div class="hour-card">
-      <h3>Now</h3>
-      <div>icon</div>
-      <div>°c</div>
+  <div *ngIf="!loading" class="hour-forecast">
+    <div *ngFor="let hour of hours" class="hour-card">
+      <p>{{hour.time}}</p>
+      <div class="hour-card-icon">
+        <img [src]="hour.condition?.icon" alt="">
+      </div>
+      <div class="hour-card-temp">
+        <h3>{{hour.temp_c}}°c</h3>
+      </div>
     </div>
   </div>
+
 </div>
 <div class="box forecast d-flex flex-column">
-  <h3>Daily Forecast for {{cityNameForMain}}</h3>
+  <h3>Daily Forecast for {{cityNameForMain?.location?.name}}</h3>
   <div *ngIf="loading" class="spinner-loading m-auto ">
     <mat-spinner diameter="70"></mat-spinner>
   </div>
