@@ -104,8 +104,15 @@
 </div>
 <div class="box forecast d-flex flex-column">
   <h3>Hourly Forecast for for {{cityNameForMain}}</h3>
-  <div *ngIf="loading" class="spinner-loading m-auto ">
+  <div *ngIf="!loading" class="spinner-loading m-auto ">
     <mat-spinner diameter="70"></mat-spinner>
+  </div>
+  <div *ngIf="loading">
+    <div class="hour-card">
+      <h3>Now</h3>
+      <div>icon</div>
+      <div>°c</div>
+    </div>
   </div>
 </div>
 <div class="box forecast d-flex flex-column">
