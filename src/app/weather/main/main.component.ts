@@ -7,13 +7,17 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 })
 export class MainComponent implements OnInit, OnChanges {
   @Input() cityNameForMain: any;
-
+  loading = false;
   constructor() {
   }
 
   ngOnChanges(changes: any): void {
     console.log(this.cityNameForMain);
-
+    if (!this.cityNameForMain?.forecast) {
+      this.loading = true;
+    } else {
+      this.loading = false;
+    }
   }
 
   ngOnInit(): void {

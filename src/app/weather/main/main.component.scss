@@ -6,6 +6,10 @@
   box-shadow: 0 0 20px 0 dimgray;
 }
 
+.box-header {
+  display: flex;
+}
+
 .wallpaper {
   //background: url("../../../assets/5184599_031119-kgo-shutterstock-rain-img.jpg") top/cover;
   overflow: hidden;
@@ -126,15 +130,41 @@
     justify-content: flex-start;
     align-content: center;
     width: 100%;
+  }
 
-    :first-child {
-      font-weight: 600;
-      //border: 1px solid;
-      font-size: 15px;
+  .sub-table-title {
+    flex: .5 0 auto;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    mat-icon {
+      flex: .2 0 auto;
+      font-size: 30px;
+
+    }
+
+    p {
+      flex: 1 0 auto;
+      margin: auto;
     }
   }
 
-  :nth-child(2) {
-    //border: 3px solid blue;
+  .sub-table-body {
+    flex: 2.5 0 auto;
+    margin: auto;
+    display: flex;
+
+    div {
+      flex: 1 0 auto;
+    }
+
+    p {
+      flex: 8 0 auto;
+      margin: auto;
+      font-size: 16px;
+    }
   }
 }

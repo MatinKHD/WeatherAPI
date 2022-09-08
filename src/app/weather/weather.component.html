@@ -6,6 +6,5 @@
 </div>
 
 <div>
-  <h3 *ngIf="!loading">Hello this test is for {{cityNameForWeather?.location?.name}}</h3>
-  <app-main [cityNameForMain]="cityNameForWeather"></app-main>
+  <app-main *ngIf="!loading" [cityNameForMain]="cityNameForWeather"></app-main>
 </div>
