@@ -98,12 +98,9 @@
 </div>
 <div class="box forecast d-flex flex-column">
   <h3>Hourly Forecast for for {{cityNameForMain?.location?.name}}</h3>
-  <div *ngIf="loading" class="spinner-loading m-auto">
-    <mat-spinner diameter="70"></mat-spinner>
-  </div>
   <div *ngIf="!loading" class="hour-forecast">
     <div *ngFor="let hour of hours" class="hour-card">
-      <p>{{hour.time}}</p>
+      <p>{{convert(hour.time)}}</p>
       <div class="hour-card-icon">
         <img [src]="hour.condition?.icon" alt="">
       </div>
@@ -112,11 +109,34 @@
       </div>
     </div>
   </div>
-
+  <div *ngIf="loading" class="spinner-loading m-auto">
+    <mat-spinner diameter="70"></mat-spinner>
+  </div>
 </div>
 <div class="box forecast d-flex flex-column">
   <h3>Daily Forecast for {{cityNameForMain?.location?.name}}</h3>
-  <div *ngIf="loading" class="spinner-loading m-auto ">
+  <div *ngIf="loading" class="spinner-loading m-auto">
     <mat-spinner diameter="70"></mat-spinner>
+  </div>
+  <div *ngIf="!loading" class="daily-forecast">
+    <div *ngFor="let day of days;let i=index" class="hour-day">
+      <ng-container *ngIf="i==0">
+        <h1>Today</h1>
+      </ng-container>
+      <ng-container *ngIf="i==1">
+        <h1>Tomorrow</h1>
+      </ng-container>
+      <ng-container *ngIf="i==2">
+        <h1>The Day After Tomorrow</h1>
+      </ng-container>
+      <h2>{{day.day?.maxtemp_c}}°c</h2>
+      <h4>{{day.day?.mintemp_c}}°c</h4>
+      <div class="day-card-icon">
+        <img [src]="day.day?.condition?.icon" alt="">
+      </div>
+      <div class="day-chance-of-rain">
+        <h3>{{day.day?.daily_chance_of_rain}}%</h3>
+      </div>
+    </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ export class MainComponent implements OnInit, OnChanges {
   loading = false;
   hours: any;
   date = new Date().getHours() - 1;
+  days: any;
 
   constructor() {
   }
@@ -18,8 +19,8 @@ export class MainComponent implements OnInit, OnChanges {
   ngOnChanges(changes: any): void {
     this._loading();
     this.getTime();
-    console.log('sexy', this.hours);
-    console.log(this.cityNameForMain);
+    this.getDay();
+    console.log('hour', this.hours);
   }
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class MainComponent implements OnInit, OnChanges {
   //in our for loop we push hoursOfArray[i] to the field called hours
   // then after all we can use *ngFor to loop throw an hours in our html
   getTime() {
-    this.hours = []
+    this.hours = [];
     if (this.cityNameForMain?.forecast) {
       let hoursOfArray = this.cityNameForMain?.forecast?.forecastday['0']?.hour;
       for (let i = this.date; i < this.date + 5; i++) {
@@ -42,6 +43,34 @@ export class MainComponent implements OnInit, OnChanges {
       }
     }
   }
+
+  //this method will check if we connect to our api or not.
+  // if so will store days array of days of our api in a
+  // variable called daysOfArray then
+  // loop throw of it to 3 more because we need three cards in
+  // our html.
+  //in our for loop we push daysOfArray[i] to the field called days
+  // then after all we can use *ngFor to loop throw a days (field) in our html
+  getDay() {
+    this.days = [];
+    if (this.cityNameForMain?.forecast) {
+      let daysOfArray = this.cityNameForMain?.forecast?.forecastday;
+      for (let i = 0; i <= 2; i++) {
+        console.log('day', daysOfArray[i]);
+        this.days.push(daysOfArray[i]);
+      }
+    }
+  }
+
+  // and to get the just time we use this method
+  convert(str: any) {
+    str = str.slice(11, 16)
+    return str;
+  }
+
+  // we use this method for our html to get the just time
+  // because in our back-end the format
+  // of the date is string ("2020-02-19 24:00")
 
   // this method is for our loading
   private _loading() {

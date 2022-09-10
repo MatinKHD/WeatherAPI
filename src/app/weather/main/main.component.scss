@@ -199,3 +199,28 @@
     }
   }
 }
+
+.daily-forecast {
+  display: flex;
+  flex-flow: row;
+  height: 70%;
+  margin: 10px;
+  padding-bottom: 15px;
+
+  .hour-day {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .day-card-icon {
+    flex: 3.6 0 auto;
+  }
+
+  .day-chance-of-rain {
+    flex: 1 0 auto;
+    font-size: 15px;
+  }
+
+}
