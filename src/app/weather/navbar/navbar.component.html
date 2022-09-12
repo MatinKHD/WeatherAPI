@@ -26,20 +26,50 @@
 <!--  </div>-->
 <!--</mat-toolbar>-->
 <div class="nav-bar">
-  <div class="logo"></div>
-  <div class="search--box">
-    <input (keyup)="getValueOfSearchBox($event)" [matAutocomplete]="auto" id="input"
-           matInput placeholder="Search City or Zip Code "
-           type="text">
-    <button (click)="changeCity()">
-      <mat-icon>search</mat-icon>
-    </button>
-    <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
-      <mat-option (click)="getValueFromSearchBox(option.name)" *ngFor="let option of options"
-                  [value]="option.name">
-        {{option.name}}
-      </mat-option>
-    </mat-autocomplete>
+  <div class="logo">
+    <a href="">logo test</a>
   </div>
-  <div class="more"></div>
+  <div class="search--box">
+    <div class="search-box">
+      <input (keyup)="getValueOfSearchBox($event)" [matAutocomplete]="auto" id="input"
+             matInput placeholder="Search City or Zip Code "
+             type="text">
+      <button (click)="changeCity()">
+        <mat-icon>search</mat-icon>
+      </button>
+      <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
+        <mat-option (click)="getValueFromSearchBox(option.name)" *ngFor="let option of options"
+                    [value]="option.name">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+  </div>
+  <div class="more">
+    <div class="sub-more">
+      <button (click)="continent()" class="sub-more-first-button">
+        <mat-icon>public</mat-icon>
+        <span>| °C</span>
+        <span>&blacktriangledown;</span>
+      </button>
+      <button class="sub-more-second-button">
+        <div class="collapse-btn">
+          <div class="burger-one"></div>
+          <div class="burger-two"></div>
+          <div class="burger-three"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+</div>
+<div *ngIf="continentElement" class="continent-selector">
+  <div class="first-sub-continent">
+
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
 </div>

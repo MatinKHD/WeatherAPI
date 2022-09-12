@@ -2,7 +2,9 @@ import {Component, EventEmitter, OnChanges, OnInit, Output} from '@angular/core'
 import {Observable} from "rxjs";
 import {ApiService} from "../services/api.service";
 
-declare function changeSearchBoxColor(): any; // add function from navbar.js in our component
+
+declare function collapseAnimation(): any; // comes form navbar.js
+
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +18,7 @@ export class NavbarComponent implements OnInit, OnChanges {
   options: any[] = [];
   filteredOptions?: Observable<string[]>;
   valueInput = '';
+  continentElement = false;
 
   constructor(
     private apiService: ApiService,
@@ -27,8 +30,8 @@ export class NavbarComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    // changeSearchBoxColor();
-
+    collapseAnimation();
+    this.continent();
   }
 
   //in each word that user write in search box we check that
@@ -63,5 +66,11 @@ export class NavbarComponent implements OnInit, OnChanges {
 
   }
 
+  // this method changes the value of continentElement
+  // with each click on sub-more-first-button.
+  // we use this to show or hide the continent selector.
+  continent() {
+    this.continentElement = !this.continentElement;
 
+  }
 }
