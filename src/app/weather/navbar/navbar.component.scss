@@ -94,15 +94,14 @@ nav {
       min-height: 100%;
       padding: 5px 30px 5px 30px;
       text-align: center;
-      font-size: 18px;
+      font-size: 20px;
       font-family: myFirstFont;
-      font-weight: 600;
+      font-weight: 500;
+    }
 
-      input::placeholder {
-        color: blue !important;
-        opacity: 1; /* Firefox */
-      }
-
+    input::placeholder {
+      color: white;
+      opacity: 1; /* Firefox */
     }
 
     button {
@@ -126,9 +125,4 @@ nav {
     flex: .5 0 auto;
     border: 2px solid pink;
   }
-}
-
-@font-face {
-  font-family: myFirstFont;
-  src: url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 }

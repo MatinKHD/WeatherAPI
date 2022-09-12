@@ -1,13 +1,16 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnChanges, OnInit, Output} from '@angular/core';
 import {Observable} from "rxjs";
 import {ApiService} from "../services/api.service";
+
+declare function changeSearchBoxColor(): any; // add function from navbar.js in our component
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+
+export class NavbarComponent implements OnInit, OnChanges {
 
   @Output() cityNameForNavbar = new EventEmitter<string>(); //send cityName to Weather Component
   options: any[] = [];
@@ -19,7 +22,13 @@ export class NavbarComponent implements OnInit {
   ) {
   }
 
+  ngOnChanges() {
+
+  }
+
   ngOnInit(): void {
+    // changeSearchBoxColor();
+
   }
 
   //in each word that user write in search box we check that
@@ -51,6 +60,7 @@ export class NavbarComponent implements OnInit {
   // in this case weather.component.ts
   getValueFromSearchBox(name: any) {
     this.cityNameForNavbar.emit(name);
+
   }
 
 
