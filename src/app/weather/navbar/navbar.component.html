@@ -1,30 +1,4 @@
-<!--<mat-toolbar class="navbar" color="primary">-->
-<!--  <div>-->
-<!--    <a class="logo" href="">-->
-<!--      <mat-icon class="logo-icon">flood</mat-icon>-->
-<!--    </a>-->
-<!--  </div>-->
-<!--  <div class="d-flex justify-content-center align-items-center">-->
 
-<!--    <div class="search-box">-->
-<!--      <input (keyup)="getValueOfSearchBox($event)" [matAutocomplete]="auto" id="input"-->
-<!--             matInput placeholder="enter your city"-->
-<!--             type="text">-->
-<!--      <button (click)="changeCity()">-->
-<!--        <mat-icon>search</mat-icon>-->
-<!--      </button>-->
-<!--      <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>-->
-<!--        <mat-option (click)="getValueFromSearchBox(option.name)" *ngFor="let option of options"-->
-<!--                    [value]="option.name">-->
-<!--          {{option.name}}-->
-<!--        </mat-option>-->
-<!--      </mat-autocomplete>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <button mat-raised-button>Dark Mode</button>-->
-<!--  </div>-->
-<!--</mat-toolbar>-->
 <div class="nav-bar">
   <div class="logo">
     <a href="">logo test</a>
@@ -52,7 +26,7 @@
         <span>| °C</span>
         <span>&blacktriangledown;</span>
       </button>
-      <button class="sub-more-second-button">
+      <button (click)="moreInfo()" class="sub-more-second-button">
         <div class="collapse-btn">
           <div class="burger-one"></div>
           <div class="burger-two"></div>
@@ -61,15 +35,118 @@
       </button>
     </div>
   </div>
-
 </div>
 <div *ngIf="continentElement" class="continent-selector">
   <div class="first-sub-continent">
-
+    <div class="btn-box">
+      <a href="">°F</a>
+      <a href="">°C</a>
+      <a href="">Hybrid</a>
+    </div>
+    <div class="btn-description">
+      <p>Metric - C / millimeters / km / kmh / millibars</p>
+    </div>
   </div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+  <div class="second-sub-continent">
+    <div class="continents">
+      <div class="header">
+        <h3>AMERICAS</h3>
+        <mat-icon>expand_more</mat-icon>
+      </div>
+    </div>
+    <div class="continents">
+      <div class="header">
+        <h3>AFRICA</h3>
+        <mat-icon>expand_more</mat-icon>
+      </div>
+    </div>
+    <div class="continents">
+      <div class="header">
+        <h3>ASIA PACIFIC</h3>
+        <mat-icon>expand_more</mat-icon>
+      </div>
+    </div>
+    <div class="continents">
+      <div class="header">
+        <h3>EUROPE</h3>
+        <mat-icon>expand_more</mat-icon>
+      </div>
+    </div>
+    <div class="continents">
+      <div (click)="country()" class="header">
+        <h3>MIDDLE EAST</h3>
+        <mat-icon>expand_more</mat-icon>
+      </div>
+      <div *ngIf="countries" class="countries">
+        <a href="">Iran</a>
+        <a href="">Iraq</a>
+        <a href="">Bahrian</a>
+        <a href="">Kuwait</a>
+        <a href="">Jordon</a>
+        <a href="">Saudi Arabia</a>
+        <a href="">United Arab Emirates</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="moreInformation" class="more-info">
+  <div class="row sub-more-info">
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>WEATHER</h3>
+      <a href="">Today's Forecast</a>
+      <a href="">Hourly Forecast</a>
+      <a href="">10 Day Forecast</a>
+      <a href="">Weekend Forecast</a>
+      <a href="">Monthly Forecast</a>
+      <a href="">National Forecast</a>
+      <a href="">National News</a>
+      <a href="">Almanac</a>
+    </div>
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>RADAR</h3>
+      <a href="">Weather in Motion &COPY;</a>
+      <a href="">Radar Maps</a>
+      <a href="">Classic Weather Maps</a>
+      <a href="">Regional Satellite</a>
+    </div>
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>SERVE</h3>
+      <a href="">Serve Alerts</a>
+      <a href="">Safety & Preparedness</a>
+      <a href="">Hurricane Central</a>
+    </div>
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>VIDEO & PHOTOS</h3>
+      <a href="">Top Stories</a>
+      <a href="">Video</a>
+      <a href="">Photos</a>
+      <a href="">Climate News</a>
+      <a href="">Award-Winning Investigation</a>
+    </div>
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>HEALTH & ACTIVITIES</h3>
+      <a href="">Allergy Tracker</a>
+      <a href="">Cold & Flu</a>
+      <a href="">Covid-19</a>
+      <a href="">Water Scarcity</a>
+      <a href="">Air Quality Forecast</a>
+    </div>
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>TV & WEATHER</h3>
+      <a href="">Alexa Skill</a>
+      <a href="">Watch Live</a>
+      <a href="">Personalities</a>
+    </div>
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>WEATHER PRODUCTS</h3>
+      <a href="">Alexa Skill</a>
+      <a href="">Seasonal Deals</a>
+    </div>
+    <div class="sub-more-info-container col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <h3>PRIVACY</h3>
+      <a href="">Privacy Settings</a>
+      <a href="">Data Rights</a>
+      <a href="">Privacy Policy</a>
+    </div>
+  </div>
 </div>

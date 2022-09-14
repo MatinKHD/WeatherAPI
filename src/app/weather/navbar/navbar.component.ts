@@ -19,6 +19,8 @@ export class NavbarComponent implements OnInit, OnChanges {
   filteredOptions?: Observable<string[]>;
   valueInput = '';
   continentElement = false;
+  countries = false;
+  moreInformation = false;
 
   constructor(
     private apiService: ApiService,
@@ -31,7 +33,6 @@ export class NavbarComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     collapseAnimation();
-    this.continent();
   }
 
   //in each word that user write in search box we check that
@@ -71,6 +72,13 @@ export class NavbarComponent implements OnInit, OnChanges {
   // we use this to show or hide the continent selector.
   continent() {
     this.continentElement = !this.continentElement;
+  }
 
+  country() {
+    this.countries = !this.countries;
+  }
+
+  moreInfo() {
+    this.moreInformation = !this.moreInformation
   }
 }

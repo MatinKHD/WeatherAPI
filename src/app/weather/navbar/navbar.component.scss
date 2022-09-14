@@ -219,9 +219,145 @@ nav {
   width: 100%;
   position: absolute;
   top: 100px;
-  height: 400px;
   display: flex;
+  flex-flow: column;
   background: #ffffff;
-  border: 10px solid red;
+  box-shadow: 0 0 20px 0 dimgray;
+  //border: 10px solid red;
   transition: all .5s ease-in-out;
+  z-index: 1;
+
+  .first-sub-continent {
+    display: flex;
+    margin: 10px 10px;
+
+    .btn-box {
+      border: 1px solid rgba(105, 105, 105, 0.44);
+      border-radius: 40px;
+      display: flex;
+
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px 35px;
+        transition: all .3s ease-in-out;
+        border-radius: 40px;
+      }
+
+      a:focus-within {
+        background-color: #0A58CA;
+        color: white;
+      }
+    }
+
+    .btn-description {
+      display: flex;
+      align-items: center;
+      padding-top: 10px;
+      margin: 0 10px;
+      color: rgba(105, 105, 105, 0.74);
+      font-size: 16px;
+    }
+  }
+
+  .second-sub-continent {
+    display: flex;
+    flex-flow: column;
+    margin: 10px;
+
+    .continents {
+      display: flex;
+      flex-flow: column;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        * {
+          padding: 5px 20px;
+          font-size: 20px;
+          font-weight: bold;
+          transition: all .2s ease-in-out;
+        }
+
+        mat-icon {
+          font-size: 28px;
+          font-weight: lighter;
+          color: #0A58CA;
+        }
+      }
+
+      .header:hover {
+        * {
+          color: #0A58CA;
+        }
+      }
+
+      .countries {
+        display: flex;
+        position: relative;
+        flex-flow: column;
+        padding: 5px 20px;
+
+        a {
+          text-decoration: none;
+          font-size: 20px;
+          color: rgba(0, 0, 0, 0.9);
+          padding: 20px 60px;
+        }
+
+        a:hover {
+          color: #0A58CA;
+        }
+      }
+    }
+
+    .continents:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(105, 105, 105, 0.24);
+    }
+  }
+}
+
+.more-info {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-flow: column;
+  background: #ffffff;
+  box-shadow: 0 0 20px 0 dimgray;
+  transition: all .5s ease-in-out;
+  z-index: 1;
+
+  .sub-more-info {
+    display: flex;
+    padding: 20px 200px;
+
+    .sub-more-info-container {
+      display: flex;
+      flex-flow: column;
+
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      a {
+        padding: 15px 0;
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+        transition: all .1s ease-in-out;
+      }
+
+      a:hover {
+        color: #0A58CA;
+      }
+    }
+  }
 }
