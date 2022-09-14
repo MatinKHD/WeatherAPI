@@ -6,5 +6,8 @@
 </div>
 
 <div>
-  <app-main *ngIf="!loading" [cityNameForMain]="cityNameForWeather"></app-main>
+  <ng-container *ngIf="my">
+    <app-main *ngIf="!loading" [cityNameForMain]="cityNameForWeather"></app-main>
+  </ng-container>
+
 </div>

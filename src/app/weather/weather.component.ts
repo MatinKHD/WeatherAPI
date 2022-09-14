@@ -10,7 +10,7 @@ export class WeatherComponent implements OnInit {
   cityNameForWeather!: any;
   test: any;
   loading = false;
-
+  my = false;
   constructor(
     private apiService: ApiService
   ) {
