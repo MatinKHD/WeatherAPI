@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-main-main',
@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./main-main.component.scss']
 })
 export class MainMainComponent implements OnInit {
-
+  @Input() cityNameForMainMain: any;
   constructor() {
   }
 
