@@ -17,13 +17,15 @@ import {MainComponent} from './main/main.component';
 import {WeatherService} from "./services/weather.service";
 import {HttpClientModule} from "@angular/common/http";
 import {SharedService} from "./services/shared.service";
+import {MainMainComponent} from './main-main/main-main.component';
 
 
 @NgModule({
   declarations: [
     WeatherComponent,
     NavbarComponent,
-    MainComponent
+    MainComponent,
+    MainMainComponent
   ],
   imports: [
     CommonModule,
